@@ -1,0 +1,69 @@
+/* RESET Y FUENTE GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos para el body */
+body {
+    display: flex; /* Usamos flexbox para distribuir el contenido */
+    flex-direction: column; /* Colocamos los elementos en columna */
+    height: 100vh; /* Asegura que el body cubra toda la altura de la pantalla */
+    background-color: #f0f0f0; /* Fondo claro por defecto */
+    padding-top: 70px; /* Espacio para la cabecera fija */
+    padding-bottom: 0px; /* Espacio para el pie de página fijo */
+    background-size: cover; /* Asegura que la imagen de fondo cubra toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    position: relative; /* Necesario para la capa de fondo adicional */
+    background-attachment: fixed; /* Fija el fondo cuando hace scroll */   
+}
+
+/* Añadimos una capa semitransparente sobre la imagen de fondo */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+/*    height: 100%; */
+    background-color: rgba(0, 0, 0, 0.4); /* Filtro de color semitransparente */
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1; /* Coloca la capa detrás del contenido */
+}
+
+/* Aseguramos que el contenido principal ocupe el espacio restante */
+main {
+    flex-grow: 1; /* Hace que el contenido principal crezca para ocupar el espacio disponible */
+}
+
+/* Clases para cada fondo específico */
+.fondo-index {
+    background-image: url('../img/index.jpg');
+}
+
+.fondo-servicios {
+    background-image: url('../servicios/img_servicios/servicios.jpg');
+}
+
+.fondo-contacto {
+    background-image: url('../contacto/img_contacto/contacto.jpg');
+}
+
+.fondo-historia {
+    background-image: url('../historia/img_historia/historia.jpg');
+}
+
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+
+    body {
+        background-size: cover; /* Asegura que la imagen de fondo cubra toda la pantalla */
+        background-position: center; /* Centra la imagen de fondo */
+        background-attachment: fixed; /* Fija el fondo cuando hace scroll */   
+    }
+}

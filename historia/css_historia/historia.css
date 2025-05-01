@@ -1,0 +1,92 @@
+/* Estilos generales */
+.mainhist {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Hace que el contenido principal crezca para ocupar el espacio disponible */
+}
+
+
+/* Contenedor principal */
+.contenedor {
+    display: flex;
+    justify-content: space-between; /* Alineación horizontal de los box */
+    width: 80%;
+}
+
+/* Estilo para cada "epoca" */
+.epoca {
+    width: 30%; /* Cada box ocupa el 30% del contenedor */
+    background: rgba(255, 255, 255, 0.8);
+/*    background-color: #fff; */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 10px; /* Espacio entre los boxes */
+}
+
+/* Contenedor que agrupa imagen y texto */
+.historia {
+    display: flex;
+    flex-direction: column; /* Disposición vertical por defecto */
+    align-items: center;
+    padding: 15px;
+}
+
+/* Estilo para la imagen */
+.imagenia img {
+    width: 100%; /* La imagen ocupa todo el ancho disponible */
+    height: auto;
+    margin-bottom: 15px; /* Espacio entre la imagen y el texto */
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Suaviza la transición al hacer hover */
+}
+
+/* Efecto de aumento en las imágenes al hacer hover */
+.imagenia img:hover {
+    transform: scale(1.05); /* Aumenta la imagen un 5% */
+}
+
+/* Estilo para el texto */
+.text p {
+    margin: 0;
+    font-size: 16px;
+    color: green;
+}
+
+.text span:first-child {
+    color: darkturquoise;
+    font-weight: bold;
+    background: rgba(50, 50, 50, 0.6); /* Fondo oscuro semitransparente */
+    padding: 5px;
+    margin-left: 25%;
+}
+
+.text span:last-child {
+    color: chartreuse;
+    font-weight: bold;
+    background: rgba(50, 50, 50, 0.6); /* Fondo oscuro semitransparente */
+    padding: 5px;
+}
+
+/* Responsividad: en pantallas más pequeñas (móviles), los elementos se apilan verticalmente */
+@media (max-width: 768px) {
+    .contenedor {
+        width: 100%; /* El contenedor ocupa todo el ancho disponible */
+        flex-direction: column; /* Disposición vertical de los boxes */
+    }
+    
+    .epoca {
+        width: 100%; /* Cada box ocupa el 100% del contenedor */
+    }
+
+    .imagenia img {
+        width: 100%; /* Hace que la imagen ocupe todo el ancho */
+        margin-bottom: 15px; /* Espacio debajo de la imagen */
+    }
+
+    .text p {
+        text-align: center; /* Centra el texto debajo de la imagen */
+    }
+}

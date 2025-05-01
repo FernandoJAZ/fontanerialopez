@@ -1,0 +1,21 @@
+/* Estilos para el pie de página */
+.pie {
+/*    position: fixed; */
+    left: 0;
+/*    bottom: 0; */
+    width: 100%;
+    height: 50px; 
+    background: rgba(50, 50, 50, 0.8); /* Fondo oscuro semitransparente */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido dentro del pie */
+    padding: 0 20px;
+/*    z-index: 1000; */
+}
+
+/* Estilo para el lema o contenido del pie de página */
+.pie .lema {
+    font-size: 18px;
+    color: aquamarine; /* Texto blanco */
+    font-weight: 600;
+}

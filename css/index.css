@@ -1,0 +1,103 @@
+/* 💠 ESTILO DEL NOMBRE DE LA EMPRESA */
+.empresa {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    padding: 5px 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.empresa span:first-child {
+    color: darkturquoise;
+}
+
+.empresa span:last-child {
+    color: chartreuse;
+}
+/* Contenedor del texto principal */
+.main-text {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: aquamarine;
+    text-align: center;
+}
+
+/* Contenedor de las tarjetas */
+.exposicion {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    /*     gap: 20px;  otra opción de distancia*/
+    margin-bottom: 20px;
+}
+
+/* Tarjeta */
+.card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    position: relative;
+    z-index: 1;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Enlace de la imagen */
+.card a {
+    display: block;
+    text-decoration: none;
+}
+
+/* Imagen dentro de cada tarjeta */
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover en la imagen */
+.card a:hover img {
+    transform: scale(1.05);
+}
+
+/* Título */
+.card h2 {
+    color: blue;
+    margin: 15px 0 10px;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+/* Descripción */
+.card p {
+    color: darkgreen;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.ocultar {
+    display: none;
+}
+
+/* 📱 RESPONSIVIDAD PARA MÓVILES */
+@media (max-width: 768px) {
+    .exposicion {
+        flex-direction: column;  /* Apila las tarjetas en móviles */
+        align-items: center;     /* Centra las tarjetas */
+    }
+
+    .card {
+        width: 90%;  /* Ocupa casi todo el ancho en móviles */
+        margin-bottom: 20px; /* Espacio entre tarjetas */
+    }
+}

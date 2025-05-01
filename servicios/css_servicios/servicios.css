@@ -1,0 +1,129 @@
+.mainserv {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Hace que el contenido principal crezca para ocupar el espacio disponible */
+}
+
+/* Contenedor de las tarjetas */
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  /* 5 columnas */
+    grid-template-rows: auto auto;          /* 2 filas */
+/*    gap: 20px;                              /* Espacio entre tarjetas */
+    gap: 2%;                              /* Espacio entre tarjetas */
+    width: 100%;
+    max-width: 1200px;                      /* Limitar el ancho máximo */
+}
+
+/* Posicionamiento de las tarjetas en pantallas grandes */
+.tarjeta:nth-child(1) { grid-column: 1; grid-row: 1; } /* Primera tarjeta */
+.tarjeta:nth-child(2) { grid-column: 3; grid-row: 1; } /* Segunda tarjeta */
+.tarjeta:nth-child(3) { grid-column: 5; grid-row: 1; } /* Tercera tarjeta */
+.tarjeta:nth-child(4) { grid-column: 2; grid-row: 2; } /* Cuarta tarjeta */
+.tarjeta:nth-child(5) { grid-column: 4; grid-row: 2; } /* Quinta tarjeta */
+
+/* Estilo de cada tarjeta */
+.tarjeta {
+    background: rgba(255, 255, 255, 0.8);
+/*    background-color: #fff;   */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    border-radius: 10px;
+}
+
+.tarjeta p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: blue;    
+    font-weight: bold;
+}
+
+.imagen-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.imagen-principal {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.imagen-enlace {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.enlace-imagen {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.tarjeta:hover .imagen-principal {
+    opacity: 0;
+}
+
+.tarjeta:hover .imagen-enlace {
+    opacity: 1;
+}
+
+.tarjeta p:last-child {
+    margin-top: 10px;
+    font-size: 14px;
+    color: green;
+    font-weight: normal;
+}
+
+.margtop {
+    margin-top: -160px;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .servicios {
+        grid-template-columns: 1fr;  /* 1 columna en móviles */
+        grid-template-rows: auto;    /* Filas automáticas */
+    }
+
+    /* Restablece el posicionamiento en móviles */
+    .tarjeta:nth-child(1),
+    .tarjeta:nth-child(2),
+    .tarjeta:nth-child(3),
+    .tarjeta:nth-child(4),
+    .tarjeta:nth-child(5) {
+        grid-column: 1; /* Todas las tarjetas en la primera columna */
+        grid-row: auto; /* Fila automática */
+    }
+    .tarjeta:nth-child(4) {
+        margin-top: 0px; /* Elimina el margen superior negativo en móviles */
+    }
+    .tarjeta:nth-child(5) {
+        margin-top: 0px; /* Elimina el margen superior negativo en móviles */
+        margin-bottom: 150px; /* Añade el margen inferior para no superponerse al pie */
+    }
+    .tarjeta {
+        height: 350px;
+    }
+}

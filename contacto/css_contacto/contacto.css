@@ -1,0 +1,121 @@
+.maincont {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Hace que el contenido principal crezca para ocupar el espacio disponible */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Espacio entre columnas */
+    width: 100%;
+    max-width: 1200px;
+}
+
+.contacto {
+    width: 45%;
+    background: rgba(255, 255, 255, 0.8);
+/*    background-color: white;  */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.formulario {
+    width: 45%;
+    background: rgba(255, 255, 255, 0.8);
+/*    background-color: white; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    text-decoration: none;
+}
+
+.contact-info img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+.enviar p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.mapa {
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #209500;
+}
+
+input:invalid {
+    border: lightcoral solid 3px;
+/*    background-color: lightcoral; */
+  }
+
+  textarea:invalid {
+    border: lightcoral solid 3px;
+/*    background-color: tomato; */
+  }
+
+  
+
+/* 📱 RESPONSIVIDAD PARA MÓVILES */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* 🔹 Apila las columnas en móviles */
+        align-items: center;
+    }
+
+    .contacto, .formulario {
+        width: 90%; /* 🔹 Cada sección ocupa casi todo el ancho */
+    }
+}
